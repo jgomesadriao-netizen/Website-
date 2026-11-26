@@ -1,7 +1,7 @@
-/* =====================================================
-   TEXTO COM IA — MICROSOFT FORMS
-   Integração com questionario.html
-===================================================== */
+/* ============================================
+   TEXTO COM IA — ACESSO AO QUESTIONÁRIO
+   Microsoft Forms
+============================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -12,29 +12,46 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // LINK DO SEU MICROSOFT FORMS
-    const FORM_URL = "https://forms.cloud.microsoft/pages/responsepage.aspx?id=xWS-6vVodkqDAZV3pnnkST7z0TQXVNJCicSv0EaE5sxUNk1KWldVMUVSTzdZTVRNUElESzNDVzBaUC4u&origin=lprLink&route=shorturl";
+    // LINK OFICIAL DO QUESTIONÁRIO
+    const FORM_URL = "https://forms.cloud.microsoft/r/Q5sbVQBnU1?origin=lprLink";
 
-    // Cria o iframe
-    const iframe = document.createElement("iframe");
+    container.innerHTML = `
+        <div class="text-center py-5 px-3">
 
-    iframe.src = FORM_URL;
-    iframe.title = "Questionário sobre Inteligência Artificial Generativa";
-    iframe.width = "100%";
-    iframe.height = "1100";
+            <div class="mb-4">
+                <i class="bi bi-ui-checks text-primary"
+                   style="font-size: 4rem;"></i>
+            </div>
 
-    iframe.style.display = "block";
-    iframe.style.width = "100%";
-    iframe.style.minHeight = "750px";
-    iframe.style.border = "none";
-    iframe.style.borderRadius = "12px";
+            <h3 class="h4 mb-3">
+                Questionário de avaliação
+            </h3>
 
-    iframe.setAttribute("loading", "lazy");
-    iframe.setAttribute("allowfullscreen", "");
+            <p class="text-body-secondary mx-auto mb-4"
+               style="max-width: 500px;">
 
-    // Insere o formulário na página
-    container.replaceChildren(iframe);
+                Chegou a hora de testar seus conhecimentos!
+                Clique no botão abaixo para acessar o questionário
+                sobre Inteligência Artificial Generativa.
+            </p>
 
-    console.log("Microsoft Forms inserido na página.");
+            <a href="${FORM_URL}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary btn-lg px-4 py-3">
+
+                <i class="bi bi-box-arrow-up-right me-2"></i>
+                Acessar questionário
+
+            </a>
+
+            <p class="small text-body-secondary mt-3 mb-0">
+                O questionário será aberto em uma nova aba.
+            </p>
+
+        </div>
+    `;
+
+    console.log("Botão de acesso ao questionário carregado.");
 
 });
