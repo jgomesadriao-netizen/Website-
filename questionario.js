@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!container) return;
 
     // COLE AQUI O LINK DE INCORPORAÇÃO DO GOOGLE FORMS
-    const googleFormUrl = "https://forms.cloud.microsoft/r/Q5sbVQBnU1?origin=lprLink";
+    const microsoftFormUrl = "https://forms.cloud.microsoft/r/Q5sbVQBnU1?origin=lprLink";
 
-    if (!googleFormUrl.startsWith("https://forms.cloud.microsoft/r/")) {
+    if (!microsoftFormUrl.startsWith("https://forms.cloud.microsoft/r/")) {
         return;
     }
 
     const iframe = document.createElement("iframe");
 
-    iframe.src = googleFormUrl;
+    iframe.src = microsoftFormUrl;
     iframe.title = "Questionário sobre Inteligência Artificial Generativa";
     iframe.width = "100%";
     iframe.height = "1100";
