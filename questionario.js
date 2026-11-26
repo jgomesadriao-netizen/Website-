@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // COLE AQUI O LINK DE INCORPORAÇÃO DO GOOGLE FORMS
-    const GOOGLE_FORM_URL = "COLE_SEU_LINK_AQUI";
+    const GOOGLE_FORM_URL = "https://forms.cloud.microsoft/r/Q5sbVQBnU1?origin=lprLink";
 
     // Mensagem de configuração
     function mostrarMensagem(titulo, mensagem) {
