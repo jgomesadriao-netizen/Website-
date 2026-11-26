@@ -18,10 +18,11 @@ HTML5, CSS3, JavaScript puro, Bootstrap 5 (CDN) e localStorage.
 - Nome 4: ISABELLA CANDIDO AMARO DOS SANTOS
 - Nome 5: LORENZO MARQUES DOS SANTOS
 - Nome 6: PABLO GREGORIO MEIRELES DA SILVA
+- Nome 7: NATHALIA SANTOS BATISTA
 
 ## Como executar localmente
 1. Baixe a pasta do projeto.
 2. Abra `index.html` no navegador (é necessária conexão com a internet para carregar o Bootstrap).
 
 ## Site publicado
-Link: _(insira aqui)_
+Link: _(https://jgomesadriao-netizen.github.io/Website-/)_
