@@ -12,10 +12,12 @@ Apresentar de forma clara o que é a geração de texto com IA, as ferramentas d
 HTML5, CSS3, JavaScript puro, Bootstrap 5 (CDN) e localStorage.
 
 ## Integrantes do grupo
-- Nome 1:
-- Nome 2:
-- Nome 3:
-- Nome 4:
+- Nome 1: JOÃO VITOR GOMES ADRIÃO
+- Nome 2: ANDRESSA DA SILVA COSTA
+- Nome 3: CAUA VIEIRA DINIZ
+- Nome 4: ISABELLA CANDIDO AMARO DOS SANTOS
+- Nome 5: LORENZO MARQUES DOS SANTOS
+- Nome 6: PABLO GREGORIO MEIRELES DA SILVA
 
 ## Como executar localmente
 1. Baixe a pasta do projeto.
