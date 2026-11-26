@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // LINK DO SEU MICROSOFT FORMS
-    const FORM_URL = "https://forms.cloud.microsoft/r/Q5sbVQBnU1?origin=lprLink";
+    const FORM_URL = "https://forms.cloud.microsoft/pages/responsepage.aspx?id=xWS-6vVodkqDAZV3pnnkST7z0TQXVNJCicSv0EaE5sxUNk1KWldVMUVSTzdZTVRNUElESzNDVzBaUC4u&origin=lprLink&route=shorturl";
 
     // Cria o iframe
     const iframe = document.createElement("iframe");
