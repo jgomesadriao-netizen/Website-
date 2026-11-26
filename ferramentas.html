@@ -1,25 +1,692 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="light">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ferramentas | Texto com IA</title>
-<script>try{document.documentElement.dataset.bsTheme=localStorage.getItem("tema")||"light"}catch(e){}</script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ferramentas de IA | Texto com IA</title>
+
+    <!-- Recuperar tema salvo -->
+    <script>
+        try {
+            document.documentElement.dataset.bsTheme =
+                localStorage.getItem("tema") || "light";
+        } catch (e) {}
+    </script>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Fontes -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS do projeto -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
-<div class="container"><a class="navbar-brand brand" href="index.html"><i class="bi bi-chat-square-text"></i> Texto com IA<span class="cursor">|</span></a>
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1"><li class="nav-item"><a class="nav-link" href="index.html">Introdução</a></li><li class="nav-item"><a class="nav-link active" href="ferramentas.html" aria-current="page">Ferramentas</a></li><li class="nav-item"><a class="nav-link" href="boas-praticas.html">Boas práticas</a></li><li class="nav-item"><a class="nav-link" href="questionario.html">Questionário</a></li>
-<li class="nav-item"><button id="tema" class="btn btn-outline-primary btn-sm ms-lg-2" aria-label="Alternar tema claro/escuro"><i class="bi bi-moon-stars"></i></button></li></ul></div></div></nav>
-<main><header class="container py-5"><h1>Ferramentas disponíveis</h1><p class="lead">Dez ferramentas de geração de texto: cinco de uso gratuito e cinco com planos pagos.</p>
-<div class="alert alert-info">Planos, limites e recursos mudam com frequência. Confira sempre as condições atuais no site oficial. Mesmo as ferramentas pagas costumam ter alguma versão gratuita limitada.</div>
-<div class="btn-group mb-3" role="group" aria-label="Filtro"><button class="btn btn-outline-primary active" data-filtro="todas">Todas</button><button class="btn btn-outline-primary" data-filtro="gratis">Gratuitas</button><button class="btn btn-outline-primary" data-filtro="pago">Com plano pago</button></div>
-<div class="row g-3" id="lista"><div class="col-md-6 col-xl-4 item" data-tipo="pago"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">ChatGPT</h3><span class="badge text-bg-warning">Possui plano pago</span></div><p class="small text-body-secondary">OpenAI</p><p><strong>Finalidade:</strong> Conversa, redação, resumo, análise de textos e código.</p><p><strong>Vantagem:</strong> Muito versátil e popular; tem plano gratuito.</p><p><strong>Limitação:</strong> Recursos avançados exigem plano pago.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://chatgpt.com" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div><div class="col-md-6 col-xl-4 item" data-tipo="pago"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">Claude</h3><span class="badge text-bg-warning">Possui plano pago</span></div><p class="small text-body-secondary">Anthropic</p><p><strong>Finalidade:</strong> Assistente para escrita, análise de documentos longos e programação.</p><p><strong>Vantagem:</strong> Bom com textos longos e escrita detalhada.</p><p><strong>Limitação:</strong> Limites de uso no plano gratuito.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://claude.ai" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div><div class="col-md-6 col-xl-4 item" data-tipo="pago"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">Perplexity</h3><span class="badge text-bg-warning">Possui plano pago</span></div><p class="small text-body-secondary">Perplexity AI</p><p><strong>Finalidade:</strong> Buscador com respostas geradas e fontes citadas.</p><p><strong>Vantagem:</strong> Mostra as fontes, facilitando a conferência.</p><p><strong>Limitação:</strong> Recursos avançados nos planos pagos.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://www.perplexity.ai" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div><div class="col-md-6 col-xl-4 item" data-tipo="pago"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">Jasper</h3><span class="badge text-bg-warning">Possui plano pago</span></div><p class="small text-body-secondary">Jasper</p><p><strong>Finalidade:</strong> Criação de textos de marketing e conteúdo para empresas.</p><p><strong>Vantagem:</strong> Voltado a equipes e identidade de marca.</p><p><strong>Limitação:</strong> Serviço pago, voltado ao público profissional.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://www.jasper.ai" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div><div class="col-md-6 col-xl-4 item" data-tipo="pago"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">Grammarly</h3><span class="badge text-bg-warning">Possui plano pago</span></div><p class="small text-body-secondary">Grammarly</p><p><strong>Finalidade:</strong> Correção, reescrita e sugestões de estilo.</p><p><strong>Vantagem:</strong> Funciona dentro de vários aplicativos.</p><p><strong>Limitação:</strong> Recursos de IA completos exigem plano pago.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://www.grammarly.com" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div><div class="col-md-6 col-xl-4 item" data-tipo="gratis"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">Google Gemini</h3><span class="badge text-bg-success">Gratuita</span></div><p class="small text-body-secondary">Google</p><p><strong>Finalidade:</strong> Assistente de conversa, escrita e resumos.</p><p><strong>Vantagem:</strong> Acesso gratuito com conta Google.</p><p><strong>Limitação:</strong> Alguns recursos dependem de planos pagos.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://gemini.google.com" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div><div class="col-md-6 col-xl-4 item" data-tipo="gratis"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">Microsoft Copilot</h3><span class="badge text-bg-success">Gratuita</span></div><p class="small text-body-secondary">Microsoft</p><p><strong>Finalidade:</strong> Assistente para dúvidas, escrita e pesquisa.</p><p><strong>Vantagem:</strong> Acesso gratuito; integra-se ao ecossistema Microsoft.</p><p><strong>Limitação:</strong> Recursos extras podem exigir assinatura.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://copilot.microsoft.com" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div><div class="col-md-6 col-xl-4 item" data-tipo="gratis"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">Meta AI</h3><span class="badge text-bg-success">Gratuita</span></div><p class="small text-body-secondary">Meta</p><p><strong>Finalidade:</strong> Assistente de conversa e escrita.</p><p><strong>Vantagem:</strong> Gratuito e ligado a aplicativos da Meta.</p><p><strong>Limitação:</strong> Disponibilidade varia por país.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://www.meta.ai" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div><div class="col-md-6 col-xl-4 item" data-tipo="gratis"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">DeepSeek</h3><span class="badge text-bg-success">Gratuita</span></div><p class="small text-body-secondary">DeepSeek</p><p><strong>Finalidade:</strong> Chat para escrita, raciocínio e código.</p><p><strong>Vantagem:</strong> Uso gratuito no chat.</p><p><strong>Limitação:</strong> Atenção à privacidade dos dados enviados.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://chat.deepseek.com" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div><div class="col-md-6 col-xl-4 item" data-tipo="gratis"><div class="card h-100 p-3"><div class="d-flex justify-content-between align-items-start"><h3 class="h5">Le Chat</h3><span class="badge text-bg-success">Gratuita</span></div><p class="small text-body-secondary">Mistral AI</p><p><strong>Finalidade:</strong> Assistente de conversa e escrita.</p><p><strong>Vantagem:</strong> Gratuito para uso básico.</p><p><strong>Limitação:</strong> Recursos avançados em planos pagos.</p><a class="btn btn-outline-primary btn-sm mt-auto" href="https://chat.mistral.ai" target="_blank" rel="noopener">Site oficial <i class="bi bi-box-arrow-up-right"></i></a></div></div></div></header></main>
-<footer class="border-top py-4 mt-5 text-center small text-body-secondary">Trabalho escolar sobre IA Generativa · Geração de texto com IA</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script><script>document.querySelectorAll("[data-filtro]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-filtro]").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelectorAll(".item").forEach(i=>i.hidden=b.dataset.filtro!=="todas"&&i.dataset.tipo!==b.dataset.filtro)})</script>
-</body></html>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand brand" href="index.html">
+                <i class="bi bi-stars"></i>
+                Texto com IA
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Introdução
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ferramentas.html">
+                            Ferramentas
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="boas-praticas.html">
+                            Boas práticas
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="questionario.html">
+                            Questionário
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+                        <button
+                            id="tema"
+                            type="button"
+                            aria-label="Ativar modo escuro"
+                        >
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container py-5">
+
+        <!-- HERO -->
+        <section class="hero mb-5">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-8">
+
+                    <span class="badge rounded-pill text-bg-primary mb-3">
+                        <i class="bi bi-tools"></i>
+                        Recursos de Inteligência Artificial
+                    </span>
+
+                    <h1>
+                        Conheça as
+                        <span class="text-primary">ferramentas de IA</span>
+                        que podem transformar sua escrita.
+                    </h1>
+
+                    <p class="lead mt-4">
+                        Descubra plataformas que ajudam a criar, revisar,
+                        organizar e aprimorar textos com o apoio da
+                        inteligência artificial.
+                    </p>
+
+                    <a href="#ferramentas" class="btn btn-primary mt-3">
+                        Explorar ferramentas
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-4 text-center">
+
+                    <div class="display-1 text-primary">
+                        <i class="bi bi-cpu"></i>
+                    </div>
+
+                    <h3 class="mt-3">Tecnologia em suas mãos</h3>
+
+                    <p>
+                        Diferentes recursos para ampliar suas possibilidades
+                        de criação.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- INTRODUÇÃO -->
+        <section class="mb-5">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-6">
+
+                    <span class="text-primary fw-bold">
+                        CONHEÇA OS RECURSOS
+                    </span>
+
+                    <h2 class="mt-2">
+                        O que são ferramentas de IA?
+                    </h2>
+
+                    <p>
+                        São plataformas e sistemas que utilizam inteligência
+                        artificial para auxiliar em diferentes tarefas,
+                        incluindo a produção e a edição de textos.
+                    </p>
+
+                    <p>
+                        Algumas ferramentas ajudam a desenvolver ideias,
+                        outras auxiliam na revisão, na organização de
+                        informações e na criação de conteúdos.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="demo">
+
+                        <h3 class="h5 mb-3">
+                            <i class="bi bi-magic text-primary"></i>
+                            O que você pode fazer?
+                        </h3>
+
+                        <p class="mb-2">
+                            Com as ferramentas certas, você pode:
+                        </p>
+
+                        <div class="prompt">
+                            Criar ideias, desenvolver textos, revisar
+                            conteúdos e explorar novas possibilidades
+                            de escrita.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- FERRAMENTAS -->
+        <section class="mb-5" id="ferramentas">
+
+            <div class="text-center mb-4">
+
+                <span class="text-primary fw-bold">
+                    PLATAFORMAS DE IA
+                </span>
+
+                <h2 class="mt-2">
+                    Conheça algumas ferramentas
+                </h2>
+
+                <p>
+                    Veja como diferentes plataformas podem ajudar
+                    na produção textual.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <!-- CHATGPT -->
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+
+                        <h3 class="h4">ChatGPT</h3>
+
+                        <p>
+                            Ferramenta de inteligência artificial capaz
+                            de conversar, responder perguntas, gerar ideias,
+                            criar textos e auxiliar na revisão de conteúdos.
+                        </p>
+
+                        <div class="mt-auto pt-3">
+                            <span class="badge rounded-pill text-bg-primary">
+                                Criação de textos
+                            </span>
+                        </div>
+
+                        <a
+                            href="https://chatgpt.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline-primary mt-3"
+                        >
+                            Acessar ferramenta
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GEMINI -->
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-stars"></i>
+                        </div>
+
+                        <h3 class="h4">Google Gemini</h3>
+
+                        <p>
+                            Assistente de inteligência artificial do Google
+                            que pode ajudar na geração de ideias, explicações,
+                            organização de informações e elaboração de textos.
+                        </p>
+
+                        <div class="mt-auto pt-3">
+                            <span class="badge rounded-pill text-bg-primary">
+                                Pesquisa e escrita
+                            </span>
+                        </div>
+
+                        <a
+                            href="https://gemini.google.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline-primary mt-3"
+                        >
+                            Acessar ferramenta
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COPILOT -->
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-microsoft"></i>
+                        </div>
+
+                        <h3 class="h4">Microsoft Copilot</h3>
+
+                        <p>
+                            Assistente de IA que pode auxiliar na elaboração
+                            de textos, criação de ideias, respostas e
+                            organização de conteúdos.
+                        </p>
+
+                        <div class="mt-auto pt-3">
+                            <span class="badge rounded-pill text-bg-primary">
+                                Produtividade
+                            </span>
+                        </div>
+
+                        <a
+                            href="https://copilot.microsoft.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline-primary mt-3"
+                        >
+                            Acessar ferramenta
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GRAMMARLY -->
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-spellcheck"></i>
+                        </div>
+
+                        <h3 class="h4">Grammarly</h3>
+
+                        <p>
+                            Ferramenta de escrita com recursos de inteligência
+                            artificial que auxilia na correção gramatical,
+                            clareza e aprimoramento de textos.
+                        </p>
+
+                        <div class="mt-auto pt-3">
+                            <span class="badge rounded-pill text-bg-primary">
+                                Revisão textual
+                            </span>
+                        </div>
+
+                        <a
+                            href="https://www.grammarly.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline-primary mt-3"
+                        >
+                            Acessar ferramenta
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUILLBOT -->
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-pencil-square"></i>
+                        </div>
+
+                        <h3 class="h4">QuillBot</h3>
+
+                        <p>
+                            Plataforma que oferece recursos para reformular
+                            frases, resumir conteúdos e aprimorar a escrita.
+                        </p>
+
+                        <div class="mt-auto pt-3">
+                            <span class="badge rounded-pill text-bg-primary">
+                                Reformulação de textos
+                            </span>
+                        </div>
+
+                        <a
+                            href="https://quillbot.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline-primary mt-3"
+                        >
+                            Acessar ferramenta
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLAUDE -->
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-braces"></i>
+                        </div>
+
+                        <h3 class="h4">Claude</h3>
+
+                        <p>
+                            Assistente de inteligência artificial que pode
+                            ajudar na interpretação de informações,
+                            elaboração de textos e organização de ideias.
+                        </p>
+
+                        <div class="mt-auto pt-3">
+                            <span class="badge rounded-pill text-bg-primary">
+                                Análise e produção
+                            </span>
+                        </div>
+
+                        <a
+                            href="https://claude.ai/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline-primary mt-3"
+                        >
+                            Acessar ferramenta
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- COMPARAÇÃO -->
+        <section class="mb-5">
+
+            <div class="text-center mb-4">
+
+                <span class="text-primary fw-bold">
+                    ENTENDA AS DIFERENÇAS
+                </span>
+
+                <h2 class="mt-2">
+                    Qual ferramenta utilizar?
+                </h2>
+
+                <p>
+                    A escolha depende do que você deseja realizar.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="demo h-100">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Para gerar ideias
+                        </h3>
+
+                        <p class="mb-0">
+                            ChatGPT, Gemini e Copilot podem ajudar
+                            a explorar possibilidades e desenvolver
+                            sugestões para novos textos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="demo h-100">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-pencil"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Para aprimorar a escrita
+                        </h3>
+
+                        <p class="mb-0">
+                            Grammarly e QuillBot oferecem recursos
+                            voltados à revisão e ao aprimoramento
+                            da linguagem.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="demo h-100">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-file-text"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Para analisar conteúdos
+                        </h3>
+
+                        <p class="mb-0">
+                            ChatGPT e Claude podem auxiliar na análise,
+                            interpretação e organização de informações.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- COMO ESCOLHER -->
+        <section class="mb-5">
+
+            <div class="text-center mb-4">
+
+                <span class="text-primary fw-bold">
+                    ESCOLHA CONSCIENTE
+                </span>
+
+                <h2 class="mt-2">
+                    Como escolher a ferramenta ideal?
+                </h2>
+
+            </div>
+
+            <div class="timeline mb-3">
+
+                <h3 class="h5">
+                    <i class="bi bi-1-circle text-primary"></i>
+                    Identifique sua necessidade
+                </h3>
+
+                <p class="mb-0">
+                    Determine se você precisa criar, revisar, resumir
+                    ou organizar um texto.
+                </p>
+
+            </div>
+
+            <div class="timeline mb-3">
+
+                <h3 class="h5">
+                    <i class="bi bi-2-circle text-primary"></i>
+                    Conheça os recursos
+                </h3>
+
+                <p class="mb-0">
+                    Explore as funcionalidades disponíveis em cada
+                    plataforma.
+                </p>
+
+            </div>
+
+            <div class="timeline mb-3">
+
+                <h3 class="h5">
+                    <i class="bi bi-3-circle text-primary"></i>
+                    Considere suas condições
+                </h3>
+
+                <p class="mb-0">
+                    Verifique disponibilidade, limitações e possíveis
+                    custos de utilização.
+                </p>
+
+            </div>
+
+            <div class="timeline">
+
+                <h3 class="h5">
+                    <i class="bi bi-4-circle text-primary"></i>
+                    Avalie os resultados
+                </h3>
+
+                <p class="mb-0">
+                    Compare as respostas e escolha a ferramenta que
+                    melhor atende ao seu objetivo.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHAMADA FINAL -->
+        <section class="hero text-center">
+
+            <div class="display-4 text-primary mb-3">
+                <i class="bi bi-rocket-takeoff"></i>
+            </div>
+
+            <h2>
+                Explore novas possibilidades!
+            </h2>
+
+            <p class="mx-auto" style="max-width: 650px;">
+                Experimente diferentes ferramentas, descubra seus recursos
+                e encontre maneiras de utilizar a inteligência artificial
+                para aprimorar sua produção textual.
+            </p>
+
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+
+                <a href="boas-praticas.html" class="btn btn-primary">
+                    Ver boas práticas
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+                <a href="questionario.html" class="btn btn-outline-primary">
+                    Acessar questionário
+                    <i class="bi bi-clipboard-check"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="text-center">
+
+        <div class="container">
+
+            <p class="mb-1 fw-bold">
+                <span class="brand">Texto com IA</span>
+            </p>
+
+            <p class="mb-0">
+                Tecnologia, criatividade e produção textual.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
