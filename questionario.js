@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // COLE AQUI O LINK DE INCORPORAÇÃO DO GOOGLE FORMS
     const googleFormUrl = "https://forms.cloud.microsoft/r/Q5sbVQBnU1?origin=lprLink";
 
-    if (!googleFormUrl.startsWith("https://docs.google.com/forms/")) {
+    if (!googleFormUrl.startsWith("https://forms.cloud.microsoft/r/")) {
         return;
     }
 
