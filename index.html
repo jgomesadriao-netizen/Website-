@@ -1,32 +1,522 @@
-<!DOCTYPE html>
-<html lang="pt-BR" data-bs-theme="light">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Introdução | Texto com IA</title>
-<script>try{document.documentElement.dataset.bsTheme=localStorage.getItem("tema")||"light"}catch(e){}</script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-<nav class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
-<div class="container"><a class="navbar-brand brand" href="index.html"><i class="bi bi-chat-square-text"></i> Texto com IA<span class="cursor">|</span></a>
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1"><li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Introdução</a></li><li class="nav-item"><a class="nav-link" href="ferramentas.html">Ferramentas</a></li><li class="nav-item"><a class="nav-link" href="boas-praticas.html">Boas práticas</a></li><li class="nav-item"><a class="nav-link" href="questionario.html">Questionário</a></li>
-<li class="nav-item"><button id="tema" class="btn btn-outline-primary btn-sm ms-lg-2" aria-label="Alternar tema claro/escuro"><i class="bi bi-moon-stars"></i></button></li></ul></div></div></nav>
-<main><header class="hero"><div class="container py-5"><div class="row align-items-center g-4"><div class="col-lg-7">
-<h1>A máquina que escreve a próxima palavra.</h1>
-<p class="lead">Veja a geração de texto com IA em ação e entenda como ela funciona, onde ajuda e onde erra.</p>
-<a href="ferramentas.html" class="btn btn-primary btn-lg me-2">Ver ferramentas</a><a href="questionario.html" class="btn btn-outline-primary btn-lg">Fazer o questionário</a></div>
-<div class="col-lg-5"><div class="demo" aria-label="Demonstração de texto sendo gerado"><div class="small text-body-secondary mb-2">Instrução: “Explique IA generativa em uma frase.”</div><p id="typer" class="mb-0" data-texto="IA generativa é um tipo de inteligência artificial que cria conteúdo novo, como textos, a partir de padrões aprendidos em grandes quantidades de dados."></p></div></div></div></div></header>
-<section class="container py-4"><h2 class="mb-3">O que é geração de texto com IA</h2><p>É a capacidade de sistemas de IA produzirem textos novos a partir de uma instrução (o <em>prompt</em>). Esses sistemas são chamados de <strong>modelos de linguagem de grande escala</strong> (LLMs) e aprendem padrões da linguagem a partir de enormes volumes de texto.</p></section>
-<section class="container py-4"><h2 class="mb-3">Como funciona</h2><div class="row g-3"><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-database fs-2 text-primary"></i><h3 class="h5 mt-2">1. Treinamento</h3><p class="mb-0">O modelo analisa grandes conjuntos de textos e aprende quais palavras costumam aparecer juntas.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-scissors fs-2 text-primary"></i><h3 class="h5 mt-2">2. Tokens</h3><p class="mb-0">O texto é dividido em pequenos pedaços chamados tokens, que viram números.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-lightning-charge fs-2 text-primary"></i><h3 class="h5 mt-2">3. Previsão</h3><p class="mb-0">A arquitetura Transformer usa atenção para pesar o contexto e prever o próximo token, repetidamente, até formar a resposta.</p></div></div></div></section>
-<section class="container py-4"><h2 class="mb-3">Histórico resumido</h2><ul class="list-unstyled timeline"><li class="mb-2"><strong>1966</strong> — ELIZA, de Joseph Weizenbaum, simula uma conversa por regras simples de texto.</li><li class="mb-2"><strong>1997</strong> — Surgem as redes LSTM, que melhoram o tratamento de sequências como frases.</li><li class="mb-2"><strong>2017</strong> — O artigo “Attention Is All You Need” apresenta a arquitetura Transformer.</li><li class="mb-2"><strong>2020</strong> — O GPT-3 mostra que modelos muito grandes geram textos variados com poucas instruções.</li><li class="mb-2"><strong>2022</strong> — O lançamento do ChatGPT (novembro) populariza a geração de texto com IA.</li></ul></section>
-<section class="container py-4"><h2 class="mb-3">Principais aplicações</h2><div class="row g-3"><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-pencil-square fs-2 text-primary"></i><h3 class="h5 mt-2">Redação e revisão</h3><p class="mb-0">Rascunhos de e-mails, resumos, textos escolares e correção de gramática.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-translate fs-2 text-primary"></i><h3 class="h5 mt-2">Tradução</h3><p class="mb-0">Tradução entre idiomas com ajuste de tom e formalidade.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-headset fs-2 text-primary"></i><h3 class="h5 mt-2">Atendimento</h3><p class="mb-0">Chatbots que respondem dúvidas frequentes de clientes.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-code-slash fs-2 text-primary"></i><h3 class="h5 mt-2">Programação</h3><p class="mb-0">Explicação, geração e depuração de trechos de código.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-mortarboard fs-2 text-primary"></i><h3 class="h5 mt-2">Estudo</h3><p class="mb-0">Explicações passo a passo, resumos e exercícios de revisão.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-search fs-2 text-primary"></i><h3 class="h5 mt-2">Pesquisa</h3><p class="mb-0">Síntese de informações de vários documentos.</p></div></div></div></section>
-<section class="container py-4"><h2 class="mb-3">Vantagens e limitações</h2><div class="row g-3"><div class="col-md-6"><div class="card h-100 p-3"><h3 class="h5">Vantagens</h3><ul class="mb-0"><li>Rapidez na criação de rascunhos</li><li>Disponível a qualquer hora</li><li>Ajuda a superar o bloqueio criativo</li><li>Adapta tom e nível de linguagem</li></ul></div></div><div class="col-md-6"><div class="card h-100 p-3"><h3 class="h5">Limitações</h3><ul class="mb-0"><li>Pode gerar informações falsas (alucinações)</li><li>Pode repetir vieses dos dados de treino</li><li>Não entende o mundo como uma pessoa</li><li>Exige revisão humana e cuidado com dados pessoais</li></ul></div></div></div></section>
-<section class="container py-4"><h2 class="mb-3">Referências</h2><ul><li>Vaswani et al. (2017). <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Attention Is All You Need</a>.</li><li>OpenAI. <a href="https://openai.com/index/chatgpt/" target="_blank" rel="noopener">Introducing ChatGPT</a> (2022).</li><li>UNESCO. <a href="https://www.unesco.org/en/digital-education/artificial-intelligence" target="_blank" rel="noopener">Inteligência artificial na educação</a>.</li></ul></section></main>
-<footer class="border-top py-4 mt-5 text-center small text-body-secondary">Trabalho escolar sobre IA Generativa · Geração de texto com IA</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
-</body></html>
+/* =====================================================
+   TEXTO COM IA — DESIGN SYSTEM
+   Tema claro + tema escuro
+===================================================== */
+
+/* ------------------------------
+   1. VARIÁVEIS GERAIS
+------------------------------ */
+
+:root {
+    --cor: #6545df;
+    --cor-hover: #5032c5;
+    --menta: #12b5a0;
+
+    --fundo: #f7f8fc;
+    --superficie: #ffffff;
+    --superficie-2: #f0edff;
+    --texto: #202033;
+    --texto-suave: #73738a;
+    --borda: #e8e6f0;
+
+    --sombra: 0 8px 30px rgba(37, 27, 79, .07);
+    --sombra-hover: 0 18px 45px rgba(67, 44, 150, .14);
+
+    --raio: 20px;
+    --transicao: .3s ease;
+}
+
+/* ------------------------------
+   2. TEMA ESCURO
+------------------------------ */
+
+[data-bs-theme="dark"] {
+    --cor: #a18aff;
+    --cor-hover: #b5a4ff;
+    --menta: #36dbc2;
+
+    --fundo: #10111b;
+    --superficie: #191b29;
+    --superficie-2: #232038;
+    --texto: #f2f0ff;
+    --texto-suave: #aaa8c0;
+    --borda: #303044;
+
+    --sombra: 0 8px 30px rgba(0, 0, 0, .20);
+    --sombra-hover: 0 18px 45px rgba(0, 0, 0, .35);
+}
+
+/* ------------------------------
+   3. BASE
+------------------------------ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--texto);
+    background: var(--fundo);
+    transition:
+        background-color var(--transicao),
+        color var(--transicao);
+}
+
+h1, h2, h3, h4, .brand {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800;
+    letter-spacing: -.035em;
+    color: var(--texto);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.4rem);
+    line-height: 1.08;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+}
+
+p {
+    color: var(--texto-suave);
+}
+
+a {
+    transition: color var(--transicao);
+}
+
+.text-primary {
+    color: var(--cor) !important;
+}
+
+.brand {
+    color: var(--cor) !important;
+    font-size: 1.4rem;
+}
+
+/* ------------------------------
+   4. NAVEGAÇÃO
+------------------------------ */
+
+.navbar {
+    background: var(--superficie) !important;
+    border-bottom: 1px solid var(--borda) !important;
+    padding: 1rem 0;
+    transition: background-color var(--transicao);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    color: var(--cor) !important;
+}
+
+.nav-link {
+    color: var(--texto-suave) !important;
+    font-weight: 600;
+    padding: .6rem .9rem !important;
+    border-radius: 10px;
+    transition: all var(--transicao);
+}
+
+.nav-link.active {
+    color: var(--cor) !important;
+    background: var(--superficie-2);
+    border-bottom: none;
+}
+
+.navbar-toggler {
+    border-color: var(--borda);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 .2rem rgba(101, 69, 223, .2);
+}
+
+/* ------------------------------
+   5. BOTÃO DE TEMA
+------------------------------ */
+
+#tema {
+    width: 43px;
+    height: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    color: var(--cor);
+    background: var(--superficie-2);
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all var(--transicao);
+}
+
+/* ------------------------------
+   6. BOTÕES
+------------------------------ */
+
+.btn {
+    border-radius: 12px;
+    padding: .7rem 1.3rem;
+    font-weight: 700;
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        background-color var(--transicao);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--cor);
+    --bs-btn-border-color: var(--cor);
+    --bs-btn-color: #ffffff;
+    --bs-btn-hover-bg: var(--cor-hover);
+    --bs-btn-hover-border-color: var(--cor-hover);
+    --bs-btn-active-bg: var(--cor-hover);
+    --bs-btn-active-border-color: var(--cor-hover);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--cor);
+    --bs-btn-border-color: var(--cor);
+    --bs-btn-hover-bg: var(--cor);
+    --bs-btn-hover-border-color: var(--cor);
+    --bs-btn-hover-color: #ffffff;
+}
+
+.btn i {
+    display: inline-block;
+    transition: transform var(--transicao);
+}
+
+/* ------------------------------
+   7. HERO — DESTAQUE PRINCIPAL
+------------------------------ */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3rem, 7vw, 6rem) 2rem;
+    border: 1px solid var(--borda);
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(101, 69, 223, .16),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(18, 181, 160, .12),
+            transparent 35%
+        ),
+        var(--superficie);
+
+    box-shadow: var(--sombra);
+    transition: all var(--transicao);
+}
+
+[data-bs-theme="dark"] .hero {
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(161, 138, 255, .19),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(54, 219, 194, .10),
+            transparent 35%
+        ),
+        var(--superficie);
+}
+
+.cursor,
+#typer::after {
+    color: var(--menta);
+    animation: pisca 1s steps(2) infinite;
+}
+
+@keyframes pisca {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ------------------------------
+   8. CARDS
+------------------------------ */
+
+.card {
+    height: 100%;
+    color: var(--texto);
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        border-color var(--transicao),
+        background-color var(--transicao);
+}
+
+.card h2,
+.card h3,
+.card h4 {
+    color: var(--texto);
+}
+
+.card p {
+    color: var(--texto-suave);
+}
+
+/* ------------------------------
+   9. DEMONSTRAÇÃO
+------------------------------ */
+
+.demo {
+    min-height: 11rem;
+    padding: 1.7rem;
+
+    color: var(--texto);
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-left: 5px solid var(--menta);
+    border-radius: 16px;
+
+    font-size: 1.15rem;
+    box-shadow: var(--sombra);
+    transition: all var(--transicao);
+}
+
+/* ------------------------------
+   10. LINHA DO TEMPO
+------------------------------ */
+
+.timeline {
+    position: relative;
+    border-left: 3px solid var(--menta);
+    padding: 1rem 1.2rem;
+    margin-left: .5rem;
+    background: var(--superficie);
+    border-radius: 0 14px 14px 0;
+    transition: all var(--transicao);
+}
+
+/* ------------------------------
+   11. PROMPTS E OPÇÕES
+------------------------------ */
+
+.prompt {
+    padding: 1rem 1.2rem;
+    color: var(--texto-suave);
+    background: var(--superficie-2);
+    border-radius: 14px;
+    border: 1px solid var(--borda);
+    font-style: italic;
+    transition: all var(--transicao);
+}
+
+.opcao {
+    white-space: normal;
+    border-radius: 12px;
+    transition: all var(--transicao);
+}
+
+/* ------------------------------
+   12. SEÇÕES
+------------------------------ */
+
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    margin-bottom: 1.2rem;
+}
+
+/* ------------------------------
+   13. RODAPÉ
+------------------------------ */
+
+footer {
+    color: var(--texto-suave);
+    background: var(--superficie);
+    border-top: 1px solid var(--borda);
+    padding: 2rem 0;
+}
+
+/* ------------------------------
+   14. FORMULÁRIOS
+------------------------------ */
+
+.form-control,
+.form-select {
+    color: var(--texto);
+    background-color: var(--superficie);
+    border-color: var(--borda);
+    border-radius: 11px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    color: var(--texto);
+    background-color: var(--superficie);
+    border-color: var(--cor);
+    box-shadow: 0 0 0 .2rem rgba(101, 69, 223, .15);
+}
+
+/* ------------------------------
+   15. INTERATIVIDADE
+------------------------------ */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .card:hover {
+        transform: translateY(-7px);
+        box-shadow: var(--sombra-hover);
+        border-color: var(--cor);
+    }
+
+    .btn:hover:not(:disabled) {
+        transform: translateY(-3px);
+        box-shadow: 0 9px 25px rgba(101, 69, 223, .22);
+    }
+
+    #tema:hover {
+        transform: rotate(12deg) scale(1.08);
+        background: var(--cor);
+        color: #ffffff;
+    }
+
+    .nav-link:hover {
+        color: var(--cor) !important;
+        background: var(--superficie-2);
+        transform: translateY(-2px);
+    }
+
+    .demo:hover,
+    .timeline:hover,
+    .prompt:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--sombra-hover);
+        border-color: var(--cor);
+    }
+
+    .opcao:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--sombra);
+        background: var(--superficie-2);
+    }
+
+    .btn:hover i {
+        transform: translateX(4px);
+    }
+}
+
+/* ------------------------------
+   16. ACESSIBILIDADE
+------------------------------ */
+
+.btn:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--menta);
+    outline-offset: 4px;
+}
+
+/* ------------------------------
+   17. RESPONSIVIDADE
+------------------------------ */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 2.5rem 1.3rem;
+        border-radius: 20px;
+    }
+
+    .card {
+        border-radius: 16px;
+    }
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+    .navbar {
+        padding: .7rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2,
+    section h2 {
+        font-size: 1.55rem;
+    }
+
+    .demo {
+        padding: 1.2rem;
+    }
+}
+
+/* ------------------------------
+   18. TRANSIÇÃO ENTRE TEMAS
+------------------------------ */
+
+body,
+.navbar,
+.card,
+.hero,
+.demo,
+.timeline,
+.prompt,
+footer,
+.form-control,
+.form-select {
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+/* ------------------------------
+   19. REDUÇÃO DE MOVIMENTO
+------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .card:hover,
+    .btn:hover,
+    .demo:hover,
+    .timeline:hover,
+    .prompt:hover,
+    .opcao:hover {
+        transform: none !important;
+    }
+}
