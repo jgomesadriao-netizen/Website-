@@ -23,3 +23,87 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1}
 .opcao{white-space:normal}
 section h2{font-size:1.7rem}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* =========================================
+   INTERATIVIDADE GLOBAL DO WEBSITE
+========================================= */
+
+/* Transição suave nos elementos */
+.card,
+.btn,
+button,
+.opcao,
+.prompt,
+.timeline {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Cartões e elementos de conteúdo */
+.card:hover,
+.prompt:hover,
+.opcao:hover,
+.timeline:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10);
+}
+
+/* Botões */
+.btn:hover,
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px rgba(91, 63, 224, 0.22);
+}
+
+/* Ícones dentro dos botões */
+.btn i,
+button i {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover i,
+button:hover i {
+    transform: translateX(4px);
+}
+
+/* Cartões clicáveis */
+a.card,
+a.prompt,
+a.opcao {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Destaque ao navegar pelo teclado */
+.btn:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #12b5a0;
+    outline-offset: 4px;
+}
+
+/* Respeita quem prefere menos animações */
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .btn,
+    button,
+    .opcao,
+    .prompt,
+    .timeline {
+        transition: none;
+    }
+
+    .card:hover,
+    .prompt:hover,
+    .opcao:hover,
+    .timeline:hover,
+    .btn:hover,
+    button:hover {
+        transform: none;
+    }
+}
