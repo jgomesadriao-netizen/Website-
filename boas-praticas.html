@@ -1,26 +1,963 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="light">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boas práticas | Texto com IA</title>
-<script>try{document.documentElement.dataset.bsTheme=localStorage.getItem("tema")||"light"}catch(e){}</script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Boas práticas | Texto com IA</title>
+
+    <!-- Recuperar tema salvo -->
+    <script>
+        try {
+            document.documentElement.dataset.bsTheme =
+                localStorage.getItem("tema") || "light";
+        } catch (e) {}
+    </script>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Fontes -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS do projeto -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg sticky-top bg-body border-bottom">
-<div class="container"><a class="navbar-brand brand" href="index.html"><i class="bi bi-chat-square-text"></i> Texto com IA<span class="cursor">|</span></a>
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1"><li class="nav-item"><a class="nav-link" href="index.html">Introdução</a></li><li class="nav-item"><a class="nav-link" href="ferramentas.html">Ferramentas</a></li><li class="nav-item"><a class="nav-link active" href="boas-praticas.html" aria-current="page">Boas práticas</a></li><li class="nav-item"><a class="nav-link" href="questionario.html">Questionário</a></li>
-<li class="nav-item"><button id="tema" class="btn btn-outline-primary btn-sm ms-lg-2" aria-label="Alternar tema claro/escuro"><i class="bi bi-moon-stars"></i></button></li></ul></div></div></nav>
-<main><header class="container py-5"><h1>Boas práticas e técnicas</h1><p class="lead">Como pedir melhor, evitar erros e usar a IA com responsabilidade.</p></header>
-<section class="container py-4"><h2 class="mb-3">Técnicas e dicas para melhores resultados</h2><div class="row g-3"><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-bullseye fs-2 text-primary"></i><h3 class="h5 mt-2">Seja específico</h3><p class="mb-0">Diga objetivo, público, tamanho e tom desejados.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-person-badge fs-2 text-primary"></i><h3 class="h5 mt-2">Defina um papel</h3><p class="mb-0">Peça que a IA responda como professor, revisor ou editor.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-layout-text-window fs-2 text-primary"></i><h3 class="h5 mt-2">Peça um formato</h3><p class="mb-0">Lista, tabela, resumo de 5 linhas ou texto com títulos.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-arrow-repeat fs-2 text-primary"></i><h3 class="h5 mt-2">Refine em etapas</h3><p class="mb-0">Peça ajustes: “mais curto”, “mais simples”, “com exemplos”.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-file-earmark-text fs-2 text-primary"></i><h3 class="h5 mt-2">Dê contexto</h3><p class="mb-0">Cole o trecho que deve ser usado e informe o que é prioridade.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-check2-square fs-2 text-primary"></i><h3 class="h5 mt-2">Verifique</h3><p class="mb-0">Confira datas, números e citações em fontes confiáveis.</p></div></div></div></section>
-<section class="container py-4"><h2 class="mb-3">Exemplos práticos de prompts</h2><div class="row g-3"><div class="col-md-6"><div class="card h-100 p-3"><span class="badge text-bg-danger align-self-start mb-2">Prompt fraco</span><p class="mb-0 prompt">Fale sobre vulcões.</p></div></div><div class="col-md-6"><div class="card h-100 p-3"><span class="badge text-bg-success align-self-start mb-2">Prompt melhor</span><p class="mb-0 prompt">Explique como se forma um vulcão em 5 linhas, para alunos do 9º ano, com uma analogia do dia a dia.</p></div></div><div class="col-md-6"><div class="card h-100 p-3"><span class="badge text-bg-danger align-self-start mb-2">Prompt fraco</span><p class="mb-0 prompt">Corrija meu texto.</p></div></div><div class="col-md-6"><div class="card h-100 p-3"><span class="badge text-bg-success align-self-start mb-2">Prompt melhor</span><p class="mb-0 prompt">Revise o texto abaixo corrigindo gramática e pontuação, sem mudar o sentido. Liste as alterações feitas.</p></div></div></div></section>
-<section class="container py-4"><h2 class="mb-3">Erros comuns</h2><ul><li>Aceitar a resposta sem conferir (alucinações).</li><li>Fazer pedidos vagos e esperar um resultado preciso.</li><li>Copiar e colar o texto como se fosse autoral.</li><li>Pedir tudo em uma única mensagem enorme.</li></ul></section>
-<section class="container py-4"><h2 class="mb-3">Ética, segurança e privacidade</h2><div class="row g-3"><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-shield-check fs-2 text-primary"></i><h3 class="h5 mt-2">Ética</h3><p class="mb-0">Declare o uso de IA quando exigido, respeite direitos autorais e não use para plágio ou desinformação.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-lock fs-2 text-primary"></i><h3 class="h5 mt-2">Privacidade</h3><p class="mb-0">Não envie senhas, CPF, dados bancários ou informações pessoais de terceiros. Veja as regras da LGPD.</p></div></div><div class="col-md-6 col-lg-4"><div class="card h-100 p-3"><i class="bi bi-exclamation-triangle fs-2 text-primary"></i><h3 class="h5 mt-2">Vieses e cuidados</h3><p class="mb-0">Respostas podem refletir preconceitos. Revise e use o senso crítico.</p></div></div></div></section></main>
-<footer class="border-top py-4 mt-5 text-center small text-body-secondary">Trabalho escolar sobre IA Generativa · Geração de texto com IA</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
-</body></html>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand brand" href="index.html">
+                <i class="bi bi-stars"></i>
+                Texto com IA
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Abrir menu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Introdução
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="ferramentas.html">
+                            Ferramentas
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="boas-praticas.html" aria-current="page">
+                            Boas práticas
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="questionario.html">
+                            Questionário
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+                        <button
+                            id="tema"
+                            type="button"
+                            aria-label="Ativar modo escuro"
+                        >
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container py-5">
+
+        <!-- HERO -->
+        <section class="hero mb-5">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-8">
+
+                    <span class="badge rounded-pill text-bg-primary mb-3">
+                        <i class="bi bi-lightbulb"></i>
+                        Aprenda a utilizar melhor a IA
+                    </span>
+
+                    <h1>
+                        Não basta usar IA.
+                        É preciso saber
+                        <span class="text-primary">como utilizar.</span>
+                    </h1>
+
+                    <p class="lead mt-4">
+                        Descubra técnicas para criar comandos melhores,
+                        evitar erros e utilizar a inteligência artificial
+                        de maneira ética, segura e responsável.
+                    </p>
+
+                    <a href="#tecnicas" class="btn btn-primary mt-3">
+                        Aprender boas práticas
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-4 text-center">
+
+                    <div class="display-1 text-primary">
+                        <i class="bi bi-lightbulb-fill"></i>
+                    </div>
+
+                    <h3 class="mt-3">
+                        Use com inteligência
+                    </h3>
+
+                    <p>
+                        Bons resultados começam com boas instruções
+                        e pensamento crítico.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUÇÃO -->
+        <section class="mb-5">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-6">
+
+                    <span class="text-primary fw-bold">
+                        O SEGREDO DE UM BOM RESULTADO
+                    </span>
+
+                    <h2 class="mt-2">
+                        Por que utilizar boas práticas?
+                    </h2>
+
+                    <p>
+                        A inteligência artificial pode facilitar a produção
+                        de textos, mas a qualidade das respostas depende
+                        também da maneira como as instruções são elaboradas.
+                    </p>
+
+                    <p>
+                        Quando você explica melhor o que deseja, fornece
+                        contexto e revisa o resultado, aumenta as chances
+                        de receber uma resposta útil e adequada.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="demo">
+
+                        <h3 class="h5 mb-3">
+                            <i class="bi bi-stars text-primary"></i>
+                            Uma boa instrução faz diferença
+                        </h3>
+
+                        <div class="prompt">
+                            Seja claro, apresente o contexto, explique
+                            seu objetivo e informe como deseja receber
+                            a resposta.
+                        </div>
+
+                        <p class="small mt-3 mb-0">
+                            Quanto melhor a orientação, maior a possibilidade
+                            de obter um resultado relevante.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TÉCNICAS -->
+        <section class="mb-5" id="tecnicas">
+
+            <div class="text-center mb-4">
+
+                <span class="text-primary fw-bold">
+                    MELHORE SEUS COMANDOS
+                </span>
+
+                <h2 class="mt-2">
+                    Técnicas e dicas para melhores resultados
+                </h2>
+
+                <p>
+                    Pequenas mudanças na maneira de pedir podem melhorar
+                    bastante a qualidade das respostas.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Seja específico
+                        </h3>
+
+                        <p class="mb-0">
+                            Diga qual é seu objetivo, quem é o público,
+                            qual tamanho deseja e que tom deve ser utilizado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-person-badge"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Defina um papel
+                        </h3>
+
+                        <p class="mb-0">
+                            Peça que a IA responda como professor,
+                            revisor, editor ou especialista em determinado
+                            assunto.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-layout-text-window"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Peça um formato
+                        </h3>
+
+                        <p class="mb-0">
+                            Informe se deseja uma lista, tabela,
+                            resumo de cinco linhas ou texto organizado
+                            com títulos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Refine em etapas
+                        </h3>
+
+                        <p class="mb-0">
+                            Peça ajustes progressivos, como:
+                            "mais curto", "mais simples" ou
+                            "explique com exemplos".
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Dê contexto
+                        </h3>
+
+                        <p class="mb-0">
+                            Apresente informações relevantes,
+                            trechos de referência e explique
+                            o que deve ser considerado prioridade.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-check2-square"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Verifique as respostas
+                        </h3>
+
+                        <p class="mb-0">
+                            Confira datas, números, informações
+                            e citações em fontes confiáveis antes
+                            de utilizar o conteúdo.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROMPTS -->
+        <section class="mb-5">
+
+            <div class="text-center mb-4">
+
+                <span class="text-primary fw-bold">
+                    APRENDA NA PRÁTICA
+                </span>
+
+                <h2 class="mt-2">
+                    Exemplos de prompts
+                </h2>
+
+                <p>
+                    Compare comandos vagos com instruções mais completas.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <!-- EXEMPLO 1 -->
+                <div class="col-md-6">
+
+                    <div class="card h-100 p-4">
+
+                        <span class="badge text-bg-danger align-self-start mb-3">
+                            <i class="bi bi-x-circle"></i>
+                            Prompt fraco
+                        </span>
+
+                        <h3 class="h5">
+                            Pedido muito genérico
+                        </h3>
+
+                        <div class="prompt mt-2">
+                            Fale sobre vulcões.
+                        </div>
+
+                        <p class="small mt-3 mb-0">
+                            O comando não informa o nível de profundidade,
+                            o público ou o formato esperado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="card h-100 p-4">
+
+                        <span class="badge text-bg-success align-self-start mb-3">
+                            <i class="bi bi-check-circle"></i>
+                            Prompt melhor
+                        </span>
+
+                        <h3 class="h5">
+                            Pedido específico
+                        </h3>
+
+                        <div class="prompt mt-2">
+                            Explique como se forma um vulcão em cinco linhas,
+                            para alunos do 9º ano, utilizando uma analogia
+                            do dia a dia.
+                        </div>
+
+                        <p class="small mt-3 mb-0">
+                            O comando apresenta objetivo, público,
+                            tamanho e estilo de explicação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EXEMPLO 2 -->
+                <div class="col-md-6">
+
+                    <div class="card h-100 p-4">
+
+                        <span class="badge text-bg-danger align-self-start mb-3">
+                            <i class="bi bi-x-circle"></i>
+                            Prompt fraco
+                        </span>
+
+                        <h3 class="h5">
+                            Instrução incompleta
+                        </h3>
+
+                        <div class="prompt mt-2">
+                            Corrija meu texto.
+                        </div>
+
+                        <p class="small mt-3 mb-0">
+                            Não explica quais aspectos devem ser corrigidos
+                            nem o que precisa ser preservado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="card h-100 p-4">
+
+                        <span class="badge text-bg-success align-self-start mb-3">
+                            <i class="bi bi-check-circle"></i>
+                            Prompt melhor
+                        </span>
+
+                        <h3 class="h5">
+                            Instrução detalhada
+                        </h3>
+
+                        <div class="prompt mt-2">
+                            Revise o texto abaixo corrigindo gramática
+                            e pontuação, sem mudar o sentido. Ao final,
+                            liste as principais alterações realizadas.
+                        </div>
+
+                        <p class="small mt-3 mb-0">
+                            A instrução define exatamente o que a IA
+                            deve fazer e o que deve evitar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESTRUTURA DE UM BOM PROMPT -->
+        <section class="mb-5">
+
+            <div class="text-center mb-4">
+
+                <span class="text-primary fw-bold">
+                    MONTE SEU COMANDO
+                </span>
+
+                <h2 class="mt-2">
+                    Estrutura de um bom prompt
+                </h2>
+
+                <p>
+                    Um comando eficiente pode ser organizado em quatro partes.
+                </p>
+
+            </div>
+
+            <div class="row g-3">
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="demo h-100 text-center">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-person-workspace"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            01. Papel
+                        </h3>
+
+                        <p class="mb-0">
+                            Quem a IA deve representar?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="demo h-100 text-center">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            02. Objetivo
+                        </h3>
+
+                        <p class="mb-0">
+                            O que você deseja alcançar?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="demo h-100 text-center">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-card-text"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            03. Contexto
+                        </h3>
+
+                        <p class="mb-0">
+                            Quais informações ela precisa conhecer?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="demo h-100 text-center">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-list-check"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            04. Formato
+                        </h3>
+
+                        <p class="mb-0">
+                            Como você quer receber a resposta?
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="demo mt-4">
+
+                <h3 class="h5 mb-3">
+                    <i class="bi bi-magic text-primary"></i>
+                    Exemplo de aplicação
+                </h3>
+
+                <div class="prompt">
+                    Atue como professor de História. Explique a Revolução
+                    Industrial para estudantes do ensino médio, utilizando
+                    linguagem simples, exemplos do cotidiano e uma lista
+                    com cinco acontecimentos importantes.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ERROS COMUNS -->
+        <section class="mb-5">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-5">
+
+                    <span class="text-primary fw-bold">
+                        ATENÇÃO AOS DETALHES
+                    </span>
+
+                    <h2 class="mt-2">
+                        Erros comuns ao utilizar IA
+                    </h2>
+
+                    <p>
+                        Mesmo sendo útil, a inteligência artificial
+                        pode apresentar respostas incorretas ou
+                        inadequadas. Por isso, é importante conhecer
+                        os erros mais frequentes.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-7">
+
+                    <div class="timeline mb-3">
+
+                        <h3 class="h5">
+                            <i class="bi bi-exclamation-circle text-primary"></i>
+                            Confiar em tudo que a IA responde
+                        </h3>
+
+                        <p class="mb-0">
+                            Sistemas de IA podem gerar informações falsas,
+                            incompletas ou imprecisas, mesmo quando
+                            parecem convincentes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline mb-3">
+
+                        <h3 class="h5">
+                            <i class="bi bi-chat-square-text text-primary"></i>
+                            Fazer pedidos vagos
+                        </h3>
+
+                        <p class="mb-0">
+                            Instruções pouco detalhadas podem resultar
+                            em respostas genéricas e distantes
+                            do objetivo.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline mb-3">
+
+                        <h3 class="h5">
+                            <i class="bi bi-files text-primary"></i>
+                            Copiar sem revisar
+                        </h3>
+
+                        <p class="mb-0">
+                            Utilizar respostas automaticamente pode
+                            reproduzir erros e comprometer a autoria
+                            do trabalho.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline">
+
+                        <h3 class="h5">
+                            <i class="bi bi-layers text-primary"></i>
+                            Pedir tudo de uma vez
+                        </h3>
+
+                        <p class="mb-0">
+                            Solicitações muito extensas e com várias
+                            tarefas podem dificultar a obtenção
+                            de respostas organizadas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÉTICA E SEGURANÇA -->
+        <section class="mb-5">
+
+            <div class="text-center mb-4">
+
+                <span class="text-primary fw-bold">
+                    RESPONSABILIDADE DIGITAL
+                </span>
+
+                <h2 class="mt-2">
+                    Ética, segurança e privacidade
+                </h2>
+
+                <p>
+                    Utilizar inteligência artificial também exige
+                    responsabilidade e consciência.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Ética e autoria
+                        </h3>
+
+                        <p class="mb-0">
+                            Declare o uso de IA quando exigido,
+                            respeite os direitos autorais e não
+                            utilize a tecnologia para plágio
+                            ou disseminação de desinformação.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-lock"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Privacidade
+                        </h3>
+
+                        <p class="mb-0">
+                            Não compartilhe senhas, CPF, dados bancários
+                            ou informações pessoais de terceiros.
+                            Conheça também as orientações da LGPD.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 p-4">
+
+                        <div class="display-5 text-primary mb-3">
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </div>
+
+                        <h3 class="h5">
+                            Vieses e senso crítico
+                        </h3>
+
+                        <p class="mb-0">
+                            As respostas podem reproduzir preconceitos
+                            ou apresentar visões limitadas. Analise
+                            as informações antes de utilizá-las.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHECKLIST -->
+        <section class="mb-5">
+
+            <div class="hero">
+
+                <div class="text-center mb-4">
+
+                    <span class="text-primary fw-bold">
+                        ANTES DE FINALIZAR
+                    </span>
+
+                    <h2 class="mt-2">
+                        Checklist de uso responsável
+                    </h2>
+
+                    <p>
+                        Confira se você está utilizando a IA de maneira adequada.
+                    </p>
+
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-8">
+
+                        <div class="demo mb-3">
+                            <i class="bi bi-check-circle text-primary me-2"></i>
+                            Defini claramente o que preciso?
+                        </div>
+
+                        <div class="demo mb-3">
+                            <i class="bi bi-check-circle text-primary me-2"></i>
+                            Forneci contexto suficiente?
+                        </div>
+
+                        <div class="demo mb-3">
+                            <i class="bi bi-check-circle text-primary me-2"></i>
+                            Conferi as informações recebidas?
+                        </div>
+
+                        <div class="demo mb-3">
+                            <i class="bi bi-check-circle text-primary me-2"></i>
+                            Evitei compartilhar dados pessoais?
+                        </div>
+
+                        <div class="demo">
+                            <i class="bi bi-check-circle text-primary me-2"></i>
+                            Revisei o conteúdo e respeitei a autoria?
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONCLUSÃO -->
+        <section class="hero text-center">
+
+            <div class="display-4 text-primary mb-3">
+                <i class="bi bi-rocket-takeoff"></i>
+            </div>
+
+            <h2>
+                A tecnologia ajuda. Seu pensamento faz a diferença.
+            </h2>
+
+            <p class="mx-auto" style="max-width: 680px;">
+                A inteligência artificial é uma ferramenta poderosa,
+                mas o conhecimento, a criatividade e o senso crítico
+                continuam sendo fundamentais. Utilize a IA como apoio,
+                não como substituta da sua capacidade de pensar.
+            </p>
+
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+
+                <a href="ferramentas.html" class="btn btn-outline-primary">
+                    Conhecer ferramentas
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+
+                <a href="questionario.html" class="btn btn-primary">
+                    Responder questionário
+                    <i class="bi bi-clipboard-check"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="text-center">
+
+        <div class="container">
+
+            <p class="mb-1 fw-bold">
+                <span class="brand">Texto com IA</span>
+            </p>
+
+            <p class="mb-0">
+                Tecnologia, criatividade e produção textual.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
