@@ -1,21 +1,63 @@
-// Tema claro/escuro (salvo no localStorage) e demonstração de digitação
+// =========================================
+// TEMA CLARO E ESCURO
+// =========================================
+
 const raiz = document.documentElement;
 const botao = document.getElementById("tema");
+
 function atualizarIcone() {
-  botao.innerHTML = raiz.dataset.bsTheme === "dark" ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon-stars"></i>';
+    if (!botao) return;
+
+    const escuro = raiz.dataset.bsTheme === "dark";
+
+    botao.innerHTML = escuro
+        ? '<i class="bi bi-sun"></i>'
+        : '<i class="bi bi-moon-stars"></i>';
+
+    botao.setAttribute(
+        "aria-label",
+        escuro ? "Ativar modo claro" : "Ativar modo escuro"
+    );
 }
-botao.addEventListener("click", () => {
-  const novo = raiz.dataset.bsTheme === "dark" ? "light" : "dark";
-  raiz.dataset.bsTheme = novo;
-  try { localStorage.setItem("tema", novo); } catch (e) {}
-  atualizarIcone();
-});
+
+if (botao) {
+    botao.addEventListener("click", () => {
+        const novoTema =
+            raiz.dataset.bsTheme === "dark" ? "light" : "dark";
+
+        raiz.dataset.bsTheme = novoTema;
+
+        try {
+            localStorage.setItem("tema", novoTema);
+        } catch (e) {}
+
+        atualizarIcone();
+    });
+}
+
 atualizarIcone();
 
-// Efeito de texto sendo gerado (apenas na página inicial)
+
+// =========================================
+// EFEITO DE DIGITAÇÃO
+// =========================================
+
 const typer = document.getElementById("typer");
+
 if (typer) {
-  const texto = typer.dataset.texto;
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) typer.textContent = texto;
-  else { let i = 0; const t = setInterval(() => { typer.textContent = texto.slice(0, ++i); if (i >= texto.length) clearInterval(t); }, 35); }
+    const texto = typer.dataset.texto || "";
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        typer.textContent = texto;
+    } else {
+        let i = 0;
+
+        const intervalo = setInterval(() => {
+            typer.textContent = texto.slice(0, ++i);
+
+            if (i >= texto.length) {
+                clearInterval(intervalo);
+            }
+        }, 35);
+    }
 }
